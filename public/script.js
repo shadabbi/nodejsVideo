@@ -26,6 +26,7 @@ navigator.mediaDevices.getUserMedia(constraints).then(function (mediaStream) {
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
+  port: port,
 });
 
 peer.on("open", (id) => {
