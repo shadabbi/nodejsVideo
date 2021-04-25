@@ -27,14 +27,17 @@ var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
   port: port,
+  // port: 3000,
 });
+
+console.log(port);
 
 peer.on("open", (id) => {
   socket.emit("join-room", ROOM_ID, id);
 });
 
 const connectToNewUser = (userId, mediaStream) => {
-  alert("new connected");
+  alert("tes");
   var call = peer.call(userId, mediaStream);
   const video = document.createElement("video");
   call.on("stream", function (stream) {
