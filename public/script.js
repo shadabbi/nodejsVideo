@@ -10,6 +10,7 @@ const peer = new Peer(undefined, {
 });
 
 console.log(port);
+alert(port);
 
 peer.on("open", (id) => {
   socket.emit("join-room", ROOM_ID, id);
@@ -32,6 +33,7 @@ navigator.mediaDevices.getUserMedia(constraints).then((mediaStream) => {
   });
 
   socket.on("user-connected", (userId) => {
+    alert("user-connected");
     connectToNewUser(userId, mediaStream);
   });
 });
